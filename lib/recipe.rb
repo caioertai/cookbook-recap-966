@@ -4,4 +4,8 @@ class Recipe
     @name = name
     @description = description
   end
+
+  def to_a
+    [@name, @description]
+  end
 end
