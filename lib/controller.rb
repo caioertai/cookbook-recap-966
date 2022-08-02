@@ -20,7 +20,7 @@ class Controller
     # Ask VIEW to ask user for a description
     recipe_description = @view.ask_for_string("description")
     # Ask RECIPE to instantiate one
-    new_recipe = Recipe.new(recipe_name, recipe_description)
+    new_recipe = Recipe.new(name: recipe_name, description: recipe_description)
     # Ask COOKBOOK to store it
     @cookbook.add_recipe(new_recipe)
   end

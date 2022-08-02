@@ -1,4 +1,5 @@
 require "csv"
+require "pry-byebug"
 require_relative "recipe"
 
 class Cookbook
@@ -30,6 +31,7 @@ class Cookbook
 
   def update_csv
     CSV.open(@csv_path, "wb") do |csv|
+      csv << Recipe.headers
       @recipes.each do |recipe|
         csv << recipe.to_a # One row at a time
       end
@@ -38,7 +40,7 @@ class Cookbook
 
   def load_csv
     CSV.foreach(@csv_path, headers: true, header_converters: :symbol) do |row|
-      @recipes << Recipe.new(row[:name], row[:description])
+      @recipes << Recipe.new(row)
     end
   end
 end
