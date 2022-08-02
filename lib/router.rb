@@ -19,6 +19,7 @@ class Router
     puts "2. Add a Recipe"
     puts "3. Remove Recipe"
     puts "4. Mark a Recipe as done"
+    puts "5. Import from AllRecipes.com"
     puts "0. To quit"
   end
 
@@ -30,6 +31,7 @@ class Router
     when 2 then @controller.create
     when 3 then @controller.destroy
     when 4 then @controller.mark
+    when 5 then @controller.import
     when 0 then @running = false
     else
       puts "Invalid option"

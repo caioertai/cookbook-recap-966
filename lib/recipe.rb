@@ -5,7 +5,7 @@ class Recipe
     @name = attributes[:name]
     @description = attributes[:description]
     @prep_time = attributes[:prep_time]
-    @done = attributes[:done] # boolean true/false
+    @done = attributes[:done] || false # boolean true/false # nil || false
   end
 
   def done? # return booleans

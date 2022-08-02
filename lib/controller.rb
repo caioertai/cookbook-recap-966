@@ -1,3 +1,4 @@
+require_relative "all_recipes_scraper"
 require_relative "recipe"
 require_relative "view"
 
@@ -62,5 +63,20 @@ class Controller
     recipe.mark_as_done!
     # Ask COOKBOOK to update csv???
     @cookbook.persist!
+  end
+
+  def import
+    # Ask VIEW to ask user for an ingredient
+    query = @view.ask_for_string("ingredient")
+    # Ask SCRAPER for an array of recipes
+    recipes = AllRecipesScraper.new(query).call
+    # Ask VIEW to display them
+    @view.display(recipes)
+    # Ask VIEW to ask user for a number
+    recipe_index = @view.ask_for_index
+    # Get That recipe instance
+    recipe = recipes[recipe_index]
+    # Ask COOKBOOK to store it
+    @cookbook.add_recipe(recipe)
   end
 end
