@@ -1,5 +1,5 @@
-name,description,prep_time
-Caipirinha,Lemon and cachaca,5
-Pizza,Flour and cheese,40
-Bread,Water and flour,30
-Mojito,Rum and Mint,5
+name,description,prep_time,done
+Caipirinha,Lemon and cachaca,5,true
+Pizza,Flour and cheese,40,true
+Bread,Water and flour,30,false
+Mojito,Rum and Mint,5,true

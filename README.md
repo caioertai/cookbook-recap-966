@@ -7,3 +7,4 @@
 - [x] List all recipes
 - [x] Create recipes
 - [x] Remove recipes
+- [ ] Mark recipes as done
