@@ -2,6 +2,7 @@
 + Name -------- String
 + Description - String
 + Prep Time --- Integer
++ Done -------- boolean
 
 # Features
 - [x] List all recipes
